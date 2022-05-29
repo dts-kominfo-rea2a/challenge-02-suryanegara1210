@@ -50,6 +50,25 @@ function lakukanLooping(arrPegawai) {
   */
   let komentar = null;
 
+  for(let x = 0; x < dataYangAkanDilooping.length; x++){
+    hasilLooping.push(dataYangAkanDilooping[x].namaDepan + " " + dataYangAkanDilooping[x].namaBelakang);
+    if(dataYangAkanDilooping[x].jenisKelamin === "M"){
+      jumlahPria++;
+    }
+    if(dataYangAkanDilooping[x].jenisKelamin === "F"){
+      jumlahWanita++;
+    }
+  }
+  if(jumlahPria > jumlahWanita){
+    komentar = "Jumlah Pria lebih banyak dari Wanita";
+  }
+  if(jumlahPria < jumlahWanita){
+    komentar = "Jumlah Wanita lebih banyak dari Pria";
+  }
+  if(jumlahPria === jumlahWanita){
+    komentar = "Jumlah Pria dan Wanita berimbang";
+  }
+
   // ! JANGAN DIMODIFIKASI
   return {
     hasilLooping,
